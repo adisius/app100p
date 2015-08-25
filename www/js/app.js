@@ -103,7 +103,7 @@
     });
 
     //EDIT CONTROLLER
-    app.controller('EditController', function($scope, $state, CuentosStore,$ionicHistory, $interval, $rootScope){
+    app.controller('EditController', function($scope, $state, CuentosStore,$ionicHistory, $interval, $rootScope, cuentoServices){
         
         $scope.viewTitle = 'Editar cuento';
         
@@ -111,12 +111,26 @@
         
         $scope.saveCuento = function(){
             $scope.cuento.fecha_mod = new Date().getTime().toString();
-            $scope.cuento.npalabras = $scope.contarPalabras($scope.cuento.cuento);
+            $scope.cuento.npalabras = cuentoServices.contarPalabras($scope.cuento.cuento);
             CuentosStore.update($scope.cuento);
             $state.go('list');
         };
         
-        $scope.formatPalabras = function(n){
+        $scope.np = cuentoServices.contarPalabras($scope.cuento.cuento);
+        $scope.npalabras = cuentoServices.formatPalabras($scope.np);
+        
+        $scope.$watch('cuento.cuento', function(){
+            $scope.np = cuentoServices.contarPalabras($scope.cuento.cuento);
+            $scope.npalabras = cuentoServices.formatPalabras($scope.np);
+        });
+        
+    });
+    
+    app.service('cuentoServices', function(){
+       
+        var self = this;
+        
+        this.formatPalabras = function(n){
             if(n == 0){
                 return '0 palabras';
             } else if(n == 1){
@@ -126,41 +140,17 @@
             }
         }
         
-        $scope.contarPalabras = function(text) {
+        this.contarPalabras = function(text) {
             var s = text ? text.split(/\s+/) : 0;
             var l = s.length;
             if(l == undefined) l=0;
             return l;
         };
         
-        $scope.stop = $interval( function(){
-            $scope.np =  $scope.contarPalabras($scope.cuento.cuento);
-            console.log($scope.np);
-        }, 100);
-        
-        var dereg = $rootScope.$on('$locationChangeSuccess', function() {
-            $interval.cancel($scope.stop);
-            dereg();
-          });
-        
-       // $scope.np = $scope.contarPalabras($scope.cuento.cuento);
-        
-        $scope.npalabras = $scope.formatPalabras($scope.np);
-        
-        $scope.setOverflowColor = function(){
-            if($scope.np > 100){
-                return 'overflow';
-            } else {
-                return '';
-            }
-        }
-        
-        
-        
     });
     
     //ADD CONTROLLER
-    app.controller('AddController', function($scope, $state, CuentosStore, $interval, $rootScope){
+    app.controller('AddController', function($scope, $state, CuentosStore, $interval, $rootScope, cuentoServices){
 
         $scope.viewTitle = 'Nuevo cuento';
         
@@ -174,50 +164,18 @@
         $scope.saveCuento = function(){
 
             $scope.cuento.fecha_mod = new Date().getTime().toString();
-            $scope.cuento.npalabras = $scope.contarPalabras($scope.cuento.cuento);
+            $scope.cuento.npalabras = cuentoServices.contarPalabras($scope.cuento.cuento);
             CuentosStore.create($scope.cuento);
             $state.go('list');
         };
         
-        $scope.formatPalabras = function(n){
-            if(n == 0){
-                return '0 palabras';
-            } else if(n == 1){
-                return '1 palabra';
-            } else {
-                return n + ' palabras';
-            }
-        }
+        $scope.np = cuentoServices.contarPalabras($scope.cuento.cuento);
+        $scope.npalabras = cuentoServices.formatPalabras($scope.np);
         
-        $scope.contarPalabras = function(text) {
-            var s = text ? text.split(/\s+/) : 0;
-            var l = s.length;
-            if(l == undefined) l=0;
-            return l;
-        };
-        
-        $scope.stop = $interval( function(){
-            $scope.np =  $scope.contarPalabras($scope.cuento.cuento);
-            console.log($scope.np);
-        }, 100);
-        
-        var dereg = $rootScope.$on('$locationChangeSuccess', function() {
-            $interval.cancel($scope.stop);
-            dereg();
-          });
-        
-       // $scope.np = $scope.contarPalabras($scope.cuento.cuento);
-        
-        $scope.npalabras = $scope.formatPalabras($scope.np);
-        
-        $scope.setOverflowColor = function(){
-            if($scope.np > 100){
-                return 'overflow';
-            } else {
-                return '';
-            }
-        }
-        
+        $scope.$watch('cuento.cuento', function(){
+            $scope.np = cuentoServices.contarPalabras($scope.cuento.cuento);
+            $scope.npalabras = cuentoServices.formatPalabras($scope.np);
+        });
         
     });
     
