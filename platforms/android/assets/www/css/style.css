@@ -1,0 +1,296 @@
+/****COLORS****
+/*  #98C7D0 : celeste (principal)
+/*  #001A34 : azul marino (principal) / lighter: #002A54
+/*  #A1D3DD : celeste claro
+/*  #671C17 : alertas / ligther: #8c261f
+/*  #4E6718 : positive / lighter: #729723
+/*************/
+
+/****CUSTOM CSS****/
+/* FONTS */
+@font-face {
+    font-family: 'lorabold';
+    src: url('../lib/ionic/fonts/lora-bold-webfont.eot');
+    src: url('../lib/ionic/fonts/lora-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../lib/ionic/fonts/lora-bold-webfont.woff') format('woff'),
+         url('../lib/ionic/fonts/lora-bold-webfont.ttf') format('truetype'),
+         url('../lib/ionic/fonts/lora-bold-webfont.svg#lorabold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'lorabold-italic';
+    src: url('../lib/ionic/fonts/lora-bolditalic-webfont.eot');
+    src: url('../lib/ionic/fonts/lora-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../lib/ionic/fonts/lora-bolditalic-webfont.woff') format('woff'),
+         url('../lib/ionic/fonts/lora-bolditalic-webfont.ttf') format('truetype'),
+         url('../lib/ionic/fonts/lora-bolditalic-webfont.svg#lorabold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'loraitalic';
+    src: url('../lib/ionic/fonts/lora-italic-webfont.eot');
+    src: url('../lib/ionic/fonts/lora-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../lib/ionic/fonts/lora-italic-webfont.woff') format('woff'),
+         url('../lib/ionic/fonts/lora-italic-webfont.ttf') format('truetype'),
+         url('../lib/ionic/fonts/lora-italic-webfont.svg#loraitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'loraregular';
+    src: url('../lib/ionic/fonts/lora-regular-webfont.eot');
+    src: url('../lib/ionic/fonts/lora-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../lib/ionic/fonts/lora-regular-webfont.woff') format('woff'),
+         url('../lib/ionic/fonts/lora-regular-webfont.ttf') format('truetype'),
+         url('../lib/ionic/fonts/lora-regular-webfont.svg#loraregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'populaire-regular';
+    src: url('../lib/ionic/fonts/populaire-webfont.eot');
+    src: url('../lib/ionic/fonts/populaire-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../lib/ionic/fonts/populaire-webfont.woff') format('woff'),
+         url('../lib/ionic/fonts/populaire-webfont.ttf') format('truetype'),
+         url('../lib/ionic/fonts/populaire-webfont.svg#populaireregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'populaire-light';
+    src: url('../lib/ionic/fonts/populairelight-webfont.eot');
+    src: url('../lib/ionic/fonts/populairelight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../lib/ionic/fonts/populairelight-webfont.woff') format('woff'),
+         url('../lib/ionic/fonts/populairelight-webfont.ttf') format('truetype'),
+         url('../lib/ionic/fonts/populairelight-webfont.svg#populaire_lightlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    -webkit-font-smoothing: antialiased;
+	text-rendering: optimizelegibility;
+}
+
+/* BAR STYLE */
+.bar.bar-stable, .bar-stable {
+    background-image: url(../img/header-bg.png);
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% 140%;
+    background-size:100% 140%;
+    background-position: center center;
+    background-color: #98c7d0;
+    
+}
+
+.bar.bar-stable .title {
+    color: #ffffff;
+    font-family: 'populaire-regular';
+}
+
+.bar-stable .button.button-clear{
+    color:#ffffff;
+}
+
+.bar.bar-stable.bar-footer {
+  background-image: url(../img/footer-bg.png);
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% 140%;
+    background-size:100% 140%;
+    background-position: center center;
+    background-color: #98c7d0;
+}
+
+.bar.bar-stable.bar-footer .button.button-assertive {
+    border-color: #98C7D0;
+    background-color: #98C7D0;
+    color: #000;
+    font-family: 'populaire-regular';
+    font-size: 18px;
+}
+
+.bar.bar-stable.bar-footer .button.button-light {
+    border-color: #98C7D0;
+    background-color: #98C7D0;
+    color: #000;
+    font-family: 'populaire-regular';
+    font-size: 18px;
+}
+
+.bar .title {
+  font-size: 24px;
+}
+
+.item-right-edit {
+  background: #98C7D0;
+}
+
+.item-reorder .button.icon {
+    color:#001A34;
+}
+
+a.item-content i.icon{
+    color:#001A34;
+}
+/* MAIN MENU */
+#main-menu ion-content{
+    background-color: #001A34;
+}
+
+#main-menu ion-content ion-item{
+    background-color: #001A34;
+    color:#fff;
+    font-family: 'populaire-regular';
+    font-size: 20px;
+    -webkit-font-smoothing: antialiased;
+	text-rendering: optimizelegibility;
+    border: 1px solid #002A54;
+}
+
+#main-menu .foto{
+    min-height:250px;
+    padding: 0;
+}
+
+#main-menu .foto .bg{
+    width:100%; 
+    height:250px;
+    background-image: url('../img/profile.jpg');
+    background-size: cover;
+    filter: blur(15px);
+    -webkit-filter: blur(15px);
+    position: fixed;
+}
+
+#main-menu .foto .imagen{
+    width:120px;
+    height:120px;
+    background-image: url('../img/profile.jpg');
+    background-size: cover;
+    position: relative;
+    margin:50px auto 0 auto;
+    -moz-border-radius: 75px; 
+    -webkit-border-radius: 75px; 
+    border-radius: 75px;
+    box-shadow: 1px 1px 5px #002A54;
+}
+
+#main-menu .foto p.nombre{
+    position: relative;
+    margin:30px auto;
+    color:#fff;
+    font-size: 24px;
+    text-align: center;
+    text-shadow: 2px 2px 1px #002A54;
+}
+
+/* CONTENT */
+ion-content {
+    font-family: 'loraitalic';
+    background-color: #98c7d0;
+}
+
+/* LISTAS */
+.item-complex .item-content, .item-radio .item-content {
+    background-color: #98c7d0;
+}
+
+.item{
+    border-color:#A1D3DD;
+}
+
+.item:first-child{
+    border-top:0px;
+}
+
+.item-content.activated{
+  background-color:#A1D3DD !important;
+}
+
+/* LISTA CUENTOS */
+ion-content#mis-cuentos{
+    margin-bottom:40px;
+}
+
+#lista-cuentos .button-positive{
+    background-color: #4E6718;
+}
+
+#lista-cuentos .button-positive.activated{
+    background-color: #729723;
+}
+
+#lista-cuentos .button-assertive{
+    background-color: #671C17;
+}
+
+#lista-cuentos .button-assertive.activated{
+    background-color: #8c261f;
+}
+
+#lista-cuentos span{
+    font-size: 60%;
+}
+
+#lista-cuentos h2{
+    white-space: normal;
+    font-family: 'populaire-regular';
+    color:#001A34;
+    font-size: 20px;
+}
+
+#lista-cuentos p{
+    color:#001A34;
+}
+
+#lista-cuentos span.fecha_mod{
+    font-size: 8px;
+    color:#001A34;
+}
+
+#lista-cuentos .item p, .item-content p {
+    white-space:normal;
+    word-wrap:break-word;
+}
+
+/* EDITAR CUENTO */
+#editar-cuento .button.button-positive {
+    border-color: #002A54;
+    background-color: #001A34;
+    color: #fff;
+    font-family: 'populaire-regular';
+    font-size: 20px;
+}
+
+#editar-cuento input.titulo {
+    font-family: 'lorabold';
+    font-size: 13px;
+}
+
+#editar-cuento textarea.cuento {
+    font-family: 'loraregular';
+    height:200px;
+    font-size: 12px;
+}
+
+/*** GLOBAL ***/
+.rotate90ccw {
+    -moz-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    display: inline-block;
+}
+
+
+
+
+

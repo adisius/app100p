@@ -1,0 +1,24 @@
+<ion-view view-title="{{viewTitle}}">
+   <ion-content id="editar-cuento"> <!-- ng-controller defined in config -->
+       <div class="list card">
+            <label class="item item-input item-floating-label">
+                <span class="input-label padding">
+                    Título
+                    <!-- <i class="padding icon ion-edit"></i> -->
+                </span>
+                <input class="titulo" type="text" placeholder="Título" ng-model="cuento.titulo">
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">
+                    Cuento
+                    <!-- <i class="padding icon ion-edit"></i> -->
+                </span>
+                <textarea class="cuento" name="" placeholder="Cuento" id="" rows="5" ng-model="cuento.cuento"></textarea>
+            </label>
+            <input type="hidden" ng-model="cuento.fecha_mod">
+       </div>
+       <div class="padding">
+           <button class="button button-block button-positive" ng-click="saveCuento()">Guardar</button>
+        </div><!-- /.padding -->
+   </ion-content>
+</ion-view>

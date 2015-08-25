@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+        <title></title>
+        
+        <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <script src="lib/ionic/js/ionic.bundle.js"></script>
+        <script src="cordova.js"></script>
+        <script src="lib/angular-truncate/src/truncate.js"></script>
+        <script src="lib/moment/moment.js"></script>
+        <script src="lib/angular-moment/angular-moment.js"></script>
+        <script src="lib/moment/locale/es.js"></script>
+        <script src="js/openfb.js"></script>
+        <script src="js/ngopenfb.js"></script>
+        <script src="js/cuentosstore.js"></script>
+        <script src="js/perfilstore.js"></script>
+        <script src="js/loginstore.js"></script>
+        <script src="js/app.js"></script>
+        
+  </head>
+  
+  <body ng-app="app100p">
+    <ion-side-menus>
+        <ion-side-menu-content drag-content="false">
+            <ion-nav-bar class="bar-stable">
+               <ion-nav-buttons side="left">
+                   <button menu-toggle="left" ng-show="showMenuBtn" class="button button-icon button-clear ion-navicon"></button>
+               </ion-nav-buttons>
+                <ion-nav-back-button></ion-nav-back-button>
+            </ion-nav-bar>
+            <ion-nav-view></ion-nav-view>
+        </ion-side-menu-content>
+        <ion-side-menu side="left" id="main-menu" ng-controller="MenuController">
+            <ion-content>
+                <ion-list>
+                    <ion-item class="foto">
+                        <div class="bg" ng-model="userid" style="background-image:url(http://graph.facebook.com/{{ userid }}/picture?width=320&amp;height=320) !important"></div><!-- /.bg -->
+                        <div class="imagen" ng-model="user" style="background-image:url(http://graph.facebook.com/{{ userid }}/picture?width=320&amp;height=320) !important"></div>
+                        <p class="nombre">Hola, {{user.first_name}}</p><!-- /.nombre -->
+                    </ion-item>
+                    <!-- <ion-item menu-close="" href="#/app/login"><i class="icon ion-ios-home-outline"></i><span class="padding">Inicio</span></ion-item> -->
+                    <ion-item menu-close="" href="#/list"><i class="icon ion-ios-list-outline"></i><span class="padding">Mis cuentos</span></ion-item>
+                    <!-- <ion-item menu-close="" href="#/desafio"><i class="icon ion-ios-bolt-outline"></i><span class="padding">Desaf&#xED;o</span></ion-item> -->
+                    <!-- <ion-item menu-close="" href="#/perfil"><i class="icon ion-ios-body-outline"></i><span class="padding">Mi perfil</span></ion-item> -->
+                    <ion-item menu-close="" href="#/profile"><i class="icon ion-ios-body-outline"></i><span class="padding">Mi Perfil</span></ion-item>
+                    <ion-item menu-close="" href="#/"><i class="icon ion-ios-gear-outline"></i><span class="padding">Preferencias</span></ion-item>
+                </ion-list>
+            </ion-content>
+        </ion-side-menu>
+    </ion-side-menus>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<ion-view view-title="Mis cuentos" ng-controller="ListController">
+    <ion-content id="mis-cuentos">
+        <ion-list show-reorder="reordering" id="lista-cuentos">
+            <ion-item class="item-remove-animate item-icon-right" href="#/edit/{{cuento.idc}}" ng-repeat="cuento in cuentos track by cuento.idc">
+                <i class="icon ion-edit"></i>
+                <h2>{{cuento.titulo}}</h2>
+                <p>{{cuento.cuento | words:15}}</p>
+                <span>{{cuento.fecha_mod | amCalendar}}</span>, 
+                <span class="npalabras"> tiene <strong>{{cuento.npalabras}}</strong> palabras</span>
+                <ion-reorder-button class="ion-drag" on-reorder="move(cuento, $fromIndex, $toIndex)"></ion-reorder-button>
+                <ion-option-button class="button-positive icon-left ion-upload" ng-click="postular(cuento.idc)">Postular</ion-option-button>
+                <ion-option-button class="button-assertive icon-left ion-trash-b" ng-click="remove(cuento.idc)">Borrar</ion-option-button>
+            </ion-item><!-- /.item -->
+        </ion-list><!-- /.list -->
+    </ion-content>
+      <div class="bar bar-footer bar-stable">
+          <a href="#/add" class="button button-assertive"><i class="icon-left ion-plus"></i><span class="padding">Crear Cuento</span></a><!-- /.nuevo cuento -->
+          <button class="button button-light" ng-click="toggleReordering()"><i class="icon-left ion-arrow-swap rotate90ccw"></i><span class="padding">Ordenar</span></button>
+      </div><!-- /.footer -->
+</ion-view>

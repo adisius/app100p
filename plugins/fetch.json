@@ -1,0 +1,20 @@
+{
+    "cordova-plugin-inappbrowser": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-inappbrowser"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "org.apache.cordova.labs.keyboard": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/apache/cordova-plugins.git",
+            "subdir": "keyboard",
+            "ref": "master"
+        },
+        "is_top_level": true,
+        "variables": {}
+    }
+}
