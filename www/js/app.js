@@ -61,6 +61,32 @@
     /*********************************/
     //$rootScope.loggedIn;
     
+    
+    /*** APP SERVICES ***/
+    /********************/
+    app.service('cuentoServices', function(){
+       
+        var self = this;
+        
+        this.formatPalabras = function(n){
+            if(n == 0){
+                return '0 palabras';
+            } else if(n == 1){
+                return '1 palabra';
+            } else {
+                return n + ' palabras';
+            }
+        }
+        
+        this.contarPalabras = function(text) {
+            var s = text ? text.split(/\s+/) : 0;
+            var l = s.length;
+            if(l == undefined) l=0;
+            return l;
+        };
+        
+    });
+    
     /*** APP CONTROLLERS ***/
     /***********************/
     
@@ -123,29 +149,6 @@
             $scope.np = cuentoServices.contarPalabras($scope.cuento.cuento);
             $scope.npalabras = cuentoServices.formatPalabras($scope.np);
         });
-        
-    });
-    
-    app.service('cuentoServices', function(){
-       
-        var self = this;
-        
-        this.formatPalabras = function(n){
-            if(n == 0){
-                return '0 palabras';
-            } else if(n == 1){
-                return '1 palabra';
-            } else {
-                return n + ' palabras';
-            }
-        }
-        
-        this.contarPalabras = function(text) {
-            var s = text ? text.split(/\s+/) : 0;
-            var l = s.length;
-            if(l == undefined) l=0;
-            return l;
-        };
         
     });
     
