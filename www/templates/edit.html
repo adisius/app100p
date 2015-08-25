@@ -7,7 +7,7 @@
             </label>
             <label class="item item-input item-floating-label">
                 <span class="input-label" style="float:left;">Cuento</span>
-                <span ng-bind="formatPalabras(np)" class="palabras" ng-class="setOverflowColor()"></span>
+                <span ng-bind="npalabras" class="palabras" ng-class="{ 'overflow': np>100 }"></span>
                 <textarea class="cuento" name="" placeholder="Cuento" id="" rows="5" ng-model="cuento.cuento"></textarea>
             </label>
             <input type="hidden" ng-model="cuento.fecha_mod">
