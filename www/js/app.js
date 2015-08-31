@@ -35,6 +35,12 @@
             controller: 'LoginController'
         });
         
+        $stateProvider.state('signup', {
+            url: '/signup',
+            templateUrl: 'templates/signup.html',
+            controller: 'SignUpController'
+        });
+        
         $stateProvider.state('perfil', {
             url: '/perfil',
             templateUrl: 'templates/perfil.html',
@@ -87,13 +93,73 @@
         
     });
     
+    app.service('signupServices', function(){
+       
+        var self = this;
+        
+    });
+    
     /*** APP CONTROLLERS ***/
     /***********************/
     
+    //SIGNUP CONTROLLER
+    app.controller('SignUpController', function ($scope, signupServices) {
+        $scope.nombre = '';
+        $scope.apellido = '';
+        $scope.email = '';
+        $scope.clave = '';
+        $scope.clave2 = '';
+        
+        $scope.checkValidPassword = function(str1){
+            if(str1 != undefined){
+                if(str1.length >= 6){
+                    console.info("valid!");
+                    return true;
+                } else {
+                    console.info("invalid!");
+                    return false;
+                }
+            }
+        }
+        
+        $scope.checkValidPasswords = function(str1, str2){
+            if(str1 == str2 && str1 != ""){
+                console.info("equals!");
+                return true;
+            } else {
+                console.info("different!");
+                return false;
+            }
+        }
+        
+        $scope.checkValidEmail = function(str){
+            if(str != undefined){
+                var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+                return re.test(str);
+            }
+        }
+        
+        $scope.checkValidText = function(str){
+            if(str != undefined){
+                if(str.length >= 2){
+                    console.info("valid!");
+                    return true;
+                } else {
+                    console.info("invalid!");
+                    return false;
+                }
+            }
+        }
+        
+        $scope.sendForm;
+        
+    });
+    
     //MENU CONTROLLER
-    app.controller('MenuController', function ($scope, LoginStore) {
-        $scope.user = LoginStore.getUserData();
-        $scope.userid = $scope.user.id;
+    app.controller('MenuController', function ($scope, PerfilStore) {
+        $scope.user = PerfilStore.get();
+        $scope.nombre = $scope.user[0].nombre;
+        $scope.imageurl = "http://app.en100palabras.com/images/profile/" + $scope.user[0].idu + ".png";
     });
     
     //LIST CONTROLLER
@@ -214,6 +280,7 @@
         
     });
 
+    
     /*** APP RUN STUFF ***/
     /*********************/
     app.run(function($ionicPlatform, ngFB) {

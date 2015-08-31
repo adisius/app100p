@@ -23,24 +23,12 @@ angular.module('app100p.perfilstore', [])
         }
     
         return {
-            list: function() {
-                return cuentos;
+            
+            get: function(){
+                return perfil;
             },
             
-            get: function(cuentoId){
-                for (var i = 0; i < cuentos.length; i++) {
-                    if (cuentos[i].idc === cuentoId) {
-                        return cuentos[i];
-                    }
-                }
-                return undefined;
-            },
-            
-            create: function(cuento) {
-                cuentos.push(cuento);
-                persist();
-            },
-            
+            //WIP
             update: function(cuento){
                 for (var i = 0; i < cuentos.length; i++) {
                     if (cuentos[i].idc === cuento.idc) {

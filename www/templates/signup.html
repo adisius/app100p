@@ -1,0 +1,41 @@
+<ion-view view-title="Crear tu cuenta" name="login-view">
+  <ion-content class="padding" id="signup">
+    <form name="form" ng-submit="register()" role="form">
+      <div class="list list-inset">
+          <label class="item item-input item-floating-label item-icon-right">
+              <i class="icon ion-checkmark-circled success" ng-hide="!checkValidText(nombre)"></i>
+              <i class="icon ion-close-circled fail" ng-hide="checkValidText(nombre)"></i>
+              <span class="input-label padding">Nombre</span>
+              <input type="text" placeholder="Nombre" ng-model="nombre" required>
+          </label>
+          <label class="item item-input item-floating-label item-icon-right">
+              <i class="icon ion-checkmark-circled success" ng-hide="!checkValidText(apellido)"></i>
+              <i class="icon ion-close-circled fail" ng-hide="checkValidText(apellido)"></i>
+            <span class="input-label padding">Apellido</span>
+              <input type="text" placeholder="Apellido" ng-model="apellido" required>
+          </label>
+          <label class="item item-input item-floating-label item-icon-right">
+              <i class="icon ion-checkmark-circled success" ng-hide="!checkValidEmail(email)"></i>
+              <i class="icon ion-close-circled fail" ng-hide="checkValidEmail(email)"></i>
+              <span class="input-label padding">Email</span>
+              <input type="email" placeholder="Email" ng-model="email" required>
+          </label>
+          <label class="item item-input item-floating-label item-icon-right">
+              <i class="icon ion-checkmark-circled success" ng-hide="!checkValidPassword(clave,clave2)"></i>
+              <i class="icon ion-close-circled fail" ng-hide="checkValidPassword(clave)"></i>
+              <span class="input-label padding">Clave</span>
+              <input type="password" placeholder="Clave" ng-model="clave" required>
+          </label>
+          <label class="item item-input item-floating-label item-icon-right">
+              <i class="icon ion-checkmark-circled success" ng-hide="!checkValidPasswords(clave,clave2)"></i>
+              <i class="icon ion-close-circled fail" ng-hide="checkValidPasswords(clave,clave2)"></i>
+              <span class="input-label padding">Confirmar clave</span>
+              <input type="password" placeholder="Confirma tu clave" ng-model="clave2" required>
+          </label>
+      </div>
+      <button class="button button-block button-positive" ng-click="checkFields()">Crear</button>
+      <a class="button button-block button-small" href="#/login">Cancelar</a>
+      
+    </form>
+  </ion-content>
+</ion-view>
