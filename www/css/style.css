@@ -2,8 +2,8 @@
 /*  #98C7D0 : celeste (principal)
 /*  #001A34 : azul marino (principal) / lighter: #002A54
 /*  #A1D3DD : celeste claro
-/*  #671C17 : alertas / ligther: #8c261f
-/*  #4E6718 : positive / lighter: #729723
+/*  #9D6D63 : alertas / ligther: #D68A67   
+/*  #9D9763 : positive / lighter: #837F5A
 /*************/
 
 /****CUSTOM CSS****/
@@ -273,19 +273,19 @@ ion-content#mis-cuentos{
 }
 
 #lista-cuentos .button-positive{
-    background-color: #4E6718;
+    background-color: #9D9763;
 }
 
 #lista-cuentos .button-positive.activated {
-    background-color: #729723;
+    background-color: #837F5A;
 }
 
 #lista-cuentos .button-assertive {
-    background-color: #671C17;
+    background-color: #D68A67;
 }
 
 #lista-cuentos .button-assertive.activated {
-    background-color: #8c261f;
+    background-color: #D68A67;
 }
 
 #lista-cuentos span{
@@ -356,6 +356,38 @@ ion-content#mis-cuentos{
 }
 
 #login .button-positive.activated{
+    border-color: #001A34;
+    background-color: #002A54;
+}
+
+#login a.crear-cuenta{
+    color: #001A34;
+    text-decoration: none;
+    font-weight: 700
+}
+
+/* SIGNUP */
+#signup .item-icon-right i{
+    font-size: 20px;
+}
+
+#signup .item-icon-right i.success{
+    color:#9D9763;
+}
+
+#signup .item-icon-right i.fail{
+    color:#9D6D63;
+}
+
+#signup .button-positive{
+    border-color: #002A54;
+    background-color: #001A34;
+    color: #fff;
+    font-family: 'populaire-regular';
+    font-size: 20px;
+}
+
+#signup .button-positive.activated{
     border-color: #001A34;
     background-color: #002A54;
 }
